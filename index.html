@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>English Master: By LASU - Learn English from Beginner to Advanced</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" href="icon-192.png">
+    <link rel="apple-touch-icon" href="icon-192.png">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+</head>
+<body>
+
+    <header>
+        <div class="header-content">
+            <div>
+                <h1>📚 English Master</h1>
+                <p>Learn English from Beginner to Advanced Level</p>
+            </div>
+            <button id="installBtn" class="install-btn">📥 Install App</button>
+        </div>
+    </header>
+
+    <nav>
+        <button class="active" onclick="showLevel('beginner', event)">🌱 Beginner</button>
+        <button onclick="showLevel('intermediate', event)">🌿 Intermediate</button>
+        <button onclick="showLevel('advanced', event)">🌳 Advanced</button>
+        <button onclick="showLevel('quiz', event)">📝 Quiz</button>
+    </nav>
+
+    <div class="score-display">
+        <h4>your score</h4>
+        <p id="totalScore">0</p>
+    </div>
+
+    <div class="container">
+        <!-- BEGINNER LEVEL -->
+        <section id="beginner" class="level-section active">
+            <h2 class="level-title">🌱 Beginner Level</h2>
+            <p class="level-description">Perfect for those just starting their English journey. Learn basic vocabulary, simple sentences, and fundamental grammar.</p>
+            
+            <div class="progress-container">
+                <div class="progress-bar" id="beginnerProgress">0%</div>
+            </div>
+
+            <div class="lesson-tabs">
+                <button class="lesson-tab active" onclick="showLesson('beginner', 'vocab', event)">Vocabulary</button>
+                <button class="lesson-tab" onclick="showLesson('beginner', 'sentences', event)">Sentences</button>
+                <button class="lesson-tab" onclick="showLesson('beginner', 'grammar', event)">Grammar</button>
+            </div>
+
+            <!-- Beginner Vocabulary -->
+            <div id="beginner-vocab" class="lesson-content active">
+                <div class="vocab-list">
+                    <h3>📖 Basic Vocabulary - Common Words</h3>
+                    
+                    <div class="vocab-item">
+                        <span class="vocab-word">Hello</span>
+                        <span class="vocab-meaning">A greeting</span>
+                    </div>
+                    <div class="vocab-item">
+                        <span class="vocab-word">Goodbye</span>
+                        <span class="vocab-meaning">Used when leaving</span>
+                    </div>
+                    <div class="vocab-item">
+                        <span class="vocab-word">Thank you</span>
+                        <span class="vocab-meaning">Express gratitude</span>
+                    </div>
+                    <div class="vocab-item">
+                        <span class="vocab-word">Please</span>
+                        <span class="vocab-meaning">Polite request</span>
+                    </div>
+                    <div class="vocab-item">
+                        <span class="vocab-word">Sorry</span>
+                        <span class="vocab-meaning">Apologize</span>
+                    </div>
+                    <div class="vocab-item">
+                        <span class="vocab-word">Yes</span>
+                        <span class="vocab-meaning">Agreement</span>
+                    </div>
+                    <div class="vocab-item">
+                        <span class="vocab-word">No</span>
+                        <span class="vocab-meaning">Disagreement</span>
+                    </div>
+                    <div class="vocab-item">
+                        <span class="vocab-word">Help</span>
+                        <span class="vocab-meaning">Assistance</span>
+                    </div>
+                </div>
+
+                <div class="vocab-list mt-20">
+                    <h3>👨‍👩‍👧‍👦 People & Family</h3>
+                    <div class="vocab-item">
+                        <span class="vocab-word">Mother</span>
+                        <span class="vocab-meaning">Female parent</span>
+                    </div>
+                    <div class="vocab-item">
+                        <span class="vocab-word">Father</span>
+                        <span class="vocab-meaning">Male parent</span>
+                    </div>
+                    <div class="vocab-item">
+                        <span class="vocab-word">Brother</span>
+                        <span class="vocab-meaning">Male sibling</span>
+                    </div>
+                    <div class="vocab-item">
+                        <span class="vocab-word">Sister</span>
+                        <span class="vocab-meaning">Female sibling</span>
+                    </div>
+                    <div class="vocab-item">
+                        <span class="vocab-word">Friend</span>
+                        <span class="vocab-meaning">Someone you know well</span>
+                    </div>
+                    <div class="vocab-item">
+                        <span class="vocab-word">Teacher</span>
+                        <span class="vocab-meaning">Someone who teaches</span>
+                    </div>
+                </div>
+
+                <div class="vocab-list mt-20">
+                    <h3>🏠 Places</h3>
+                    <div class="vocab-item">
+                        <span class="vocab-word">House</span>
+                        <span class="vocab-meaning">Where people live</span>
+                    </div>
+                    <div class="vocab-item">
+                        <span class="vocab-word">School</span>
+                        <span class="vocab-meaning">Where students learn</span>
+                    </div>
+                    <div class="vocab-item">
+                        <span class="vocab-word">Hospital</span>
+                        <span class="vocab-meaning">Where sick people go</span>
+                    </div>
+                    <div class="vocab-item">
+                        <span class="vocab-word">Market</span>
+                        <span class="vocab-meaning">Where things are sold</span>
+                    </div>
+                    <div class="vocab-item">
+                        <span class="vocab-word">Church</span>
+                        <span class="vocab-meaning">Place of worship</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Beginner Sentences -->
+            <div id="beginner-sentences" class="lesson-content">
+                <div class="content-card">
+                    <h3>📝 Common Daily Sentences</h3>
+                    <p>Learn these essential sentences for everyday communication:</p>
+                    <ul>
+                        <li><strong>Good morning!</strong> - Greeting in the morning</li>
+                        <li><strong>Good afternoon!</strong> - Greeting in the afternoon</li>
+                        <li><strong>Good evening!</strong> - Greeting in the evening</li>
+                        <li><strong>How are you?</strong> - Asking about someone</li>
+                        <li><strong>I am fine, thank you.</strong> - Response</li>
+                        <li><strong>What is your name?</strong> - Asking someone's name</li>
+                        <li><strong>My name is...</strong> - Introducing yourself</li>
+                        <li><strong>Nice to meet you!</strong> - When meeting someone</li>
+                        <li><strong>Where is the bathroom?</strong> - Asking for location</li>
+                        <li><strong>I don't understand.</strong> - When confused</li>
+                    </ul>
+                </div>
+
+                <div class="content-card mt-20">
+                    <h3>🗣️ Introducing Yourself</h3>
+                    <p><strong>Basic Pattern:</strong> "My name is [Name]. I am from [Country]. I am a [Profession/Student]."</p>
+                    <p class="mt-10"><strong>Examples:</strong></p>
+                    <ul>
+                        <li>My name is John. I am from Nigeria. I am a student.</li>
+                        <li>My name is Sarah. I am from America. I am a teacher.</li>
+                        <li>My name is Ahmed. I am from Egypt. I am a doctor.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Beginner Grammar -->
+            <div id="beginner-grammar" class="lesson-content">
+                <div class="grammar-rule">
+                    <h4>📖 Rule 1: Subject-Verb Agreement</h4>
+                    <p>In English, the subject and verb must match. Use <strong>is</strong> with singular subjects and <strong>are</strong> with plural subjects.</p>
+                    <ul>
+                        <li>He <strong>is</strong> a student. (singular)</li>
+                        <li>They <strong>are</strong> students. (plural)</li>
+                        <li>She <strong>is</strong> happy.</li>
+                        <li>We <strong>are</strong> friends.</li>
+                    </ul>
+                </div>
+
+                <div class="grammar-rule">
+                    <h4>📖 Rule 2: Using Articles (a, an, the)</h4>
+                    <ul>
+                        <li><strong>a</strong> - Used before consonant sounds: a book, a car, a teacher</li>
+                        <li><strong>an</strong> - Used before vowel sounds: an apple, an egg, an idea</li>
+                        <li><strong>the</strong> - Used for specific things: the sun, the book on the table</li>
+                    </ul>
+                </div>
+
+                <div class="grammar-rule">
+                    <h4>📖 Rule 3: This/That - These/Those</h4>
+                    <ul>
+                        <li><strong>This</strong> - For singular items near you: This is my book.</li>
+                        <li><strong>That</strong> - For singular items far from you: That is her house.</li>
+                        <li><strong>These</strong> - For plural items near you: These are my friends.</li>
+                        <li><strong>Those</strong> - For plural items far from you: Those are their cars.</li>
+                    </ul>
+                </div>
+
+                <div class="practice-area">
+                    <h4>✏️ Practice Exercise: Fill in the blanks</h4>
+                    <div class="fill-blank">
+                        <span>1. This is _____ book.</span>
+                        <input type="text" class="blank-input" data-answer="my" placeholder="?">
+                    </div>
+                    <div class="fill-blank">
+                        <span>2. Those are _____ (that - plural).</span>
+                        <input type="text" class="blank-input" data-answer="those" placeholder="?">
+                    </div>
+                    <div class="fill-blank">
+                        <span>3. He _____ a teacher.</span>
+                        <input type="text" class="blank-input" data-answer="is" placeholder="?">
+                    </div>
+                    <button class="check-btn" onclick="checkBeginnerExercise()">Check Answers</button>
+                    <div id="beginnerResult"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- INTERMEDIATE LEVEL -->
+        <section id="intermediate" class="level-section">
+            <h2 class="level-title">🌿 Intermediate Level</h2>
+            <p class="level-description">Take your English to the next level with more complex grammar, varied sentence structures, and richer vocabulary.</p>
+            
+            <div class="progress-container">
+                <div class="progress-bar" id="intermediateProgress">0%</div>
+            </div>
+
+            <div class="lesson-tabs">
+                <button class="lesson-tab active" onclick="showLesson('intermediate', 'tenses', event)">Tenses</button>
+                <button class="lesson-tab" onclick="showLesson('intermediate', 'vocab', event)">Vocabulary</button>
+                <button class="lesson-tab" onclick="showLesson('intermediate', 'grammar', event)">Grammar</button>
+            </div>
+
+            <!-- Intermediate Tenses -->
+            <div id="intermediate-tenses" class="lesson-content active">
+                <div class="content-card">
+                    <h3>⏰ English Tenses Overview</h3>
+                    <p>Understanding tenses is crucial for expressing time in English. Here are the 12 tenses:</p>
+                </div>
+
+                <div class="grammar-rule">
+                    <h4>📖 Present Tenses</h4>
+                    <ul>
+                        <li><strong>Simple Present:</strong> I play football every Sunday. (Habits, facts)</li>
+                        <li><strong>Present Continuous:</strong> I am playing football now. (Happening now)</li>
+                        <li><strong>Present Perfect:</strong> I have played football before. (Past action, present result)</li>
+                        <li><strong>Present Perfect Continuous:</strong> I have been playing for 2 hours. (Continuous from past to now)</li>
+                    </ul>
+                </div>
+
+                <div class="grammar-rule">
+                    <h4>📖 Past Tenses</h4>
+                    <ul>
+                        <li><strong>Simple Past:</strong> I played football yesterday. (Completed actions)</li>
+                        <li><strong>Past Continuous:</strong> I was playing when it rained. (Action in progress in past)</li>
+                        <li><strong>Past Perfect:</strong> I had finished before he came. (Action before another past action)</li>
+                        <li><strong>Past Perfect Continuous:</strong> I had been playing for an hour. (Continuous past action)</li>
+                    </ul>
+                </div>
+
+                <div class="grammar-rule">
+                    <h4>📖 Future Tenses</h4>
+                    <ul>
+                        <li><strong>Simple Future:</strong> I will play football tomorrow. (Predictions, decisions)</li>
+                        <li><strong>Future Continuous:</strong> I will be playing at 5 PM. (Action at specific future time)</li>
+                        <li><strong>Future Perfect:</strong> I will have finished by tomorrow. (Action completed by future time)</li>
+                        <li><strong>Future Perfect Continuous:</strong> I will have been playing for 3 hours. (Continuous future action)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Intermediate Vocabulary -->
+            <div id="intermediate-vocab" class="lesson-content">
+                <div class="vocab-list">
+                    <h3>💼 Business & Professional English</h3>
+                    <div class="vocab-item">
+                        <span class="vocab-word">Meeting</span>
+                        <span class="vocab-meaning">A gathering for discussion</span>
+                    </div>
+                    <div class="vocab-item">
+                        <span class="vocab-word">Deadline</span>
+                        <span class="vocab-meaning">The final date for completion</span>
+                    </div>
+                    <div class="vocab-item">
+                        <span class="vocab-word">Proposal</span>
+                        <span class="vocab-meaning">A formal suggestion</span>
+                    </div>
+                    <div class="vocab-item">
+                        <span class="vocab-word">Negotiate</span>
+                        <span class="vocab-meaning">Discuss to reach agreement</span>
+                    </div>
+                    <div class="vocab-item">
+                        <span class="vocab-word">Strategy</span>
+                        <span class="vocab-meaning">A plan of action</span>
+                    </div>
+                </div>
+
+                <div class="vocab-list mt-20">
+                    <h3>🎯 Describing Emotions</h3>
+                    <div class="vocab-item">
+                        <span class="vocab-word">Anxious</span>
+                        <span class="vocab-meaning">Worried or nervous</span>
+                    </div>
+                    <div class="vocab-item">
+                        <span class="vocab-word">Frustrated</span>
+                        <span class="vocab-meaning">Feeling upset or annoyed</span>
+                    </div>
+                    <div class="vocab-item">
+                        <span class="vocab-word">Excited</span>
+                        <span class="vocab-meaning">Very happy and enthusiastic</span>
+                    </div>
+                    <div class="vocab-item">
+                        <span class="vocab-word">Confident</span>
+                        <span class="vocab-meaning">Sure of yourself</span>
+                    </div>
+                    <div class="vocab-item">
+                        <span class="vocab-word">Grateful</span>
+                        <span class="vocab-meaning">Feeling thankful</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Intermediate Grammar -->
+            <div id="intermediate-grammar" class="lesson-content">
+                <div class="grammar-rule">
+                    <h4>📖 Conditionals</h4>
+                    <ul>
+                        <li><strong>Zero Conditional:</strong> If + present simple, present simple (Facts)
+                            <br><em>If you heat water to 100°C, it boils.</em></li>
+                        <li><strong>First Conditional:</strong> If + present simple, will + verb (Real possibilities)
+                            <br><em>If it rains, I will stay home.</em></li>
+                        <li><strong>Second Conditional:</strong> If + past simple, would + verb (Imaginary)
+                            <br><em>If I won the lottery, I would travel the world.</em></li>
+                        <li><strong>Third Conditional:</strong> If + past perfect, would have + past participle (Past imaginary)
+                            <br><em>If I had studied harder, I would have passed.</em></li>
+                    </ul>
+                </div>
+
+                <div class="grammar-rule">
+                    <h4>📖 Passive Voice</h4>
+                    <p><strong>Formula:</strong> Subject + be + past participle</p>
+                    <ul>
+                        <li>Active: The chef <strong>prepares</strong> the food.</li>
+                        <li>Passive: The food <strong>is prepared</strong> by the chef.</li>
+                        <li>Active: They <strong>built</strong> this house in 2020.</li>
+                        <li>Passive: This house <strong>was built</strong> in 2020.</li>
+                        <li>Active: Someone <strong>will complete</strong> the project.</li>
+                        <li>Passive: The project <strong>will be completed</strong>.</li>
+                    </ul>
+                </div>
+
+                <div class="grammar-rule">
+                    <h4>📖 Modal Verbs for Probability</h4>
+                    <ul>
+                        <li><strong>Must/Could:</strong> He must be at home. (Strong probability)</li>
+                        <li><strong>Might/May:</strong> She might come later. (Possibility)</li>
+                        <li><strong>Can't:</strong> He can't be serious. (Impossibility)</li>
+                        <li><strong>Should:</strong> He should be there by now. (Expectation)</li>
+                    </ul>
+                </div>
+
+                <div class="practice-area">
+                    <h4>✏️ Practice Exercise: Choose the correct tense</h4>
+                    <div class="fill-blank">
+                        <span>1. If it _____ tomorrow, I will stay home.</span>
+                        <input type="text" class="blank-input" data-answer="rains" placeholder="?">
+                    </div>
+                    <div class="fill-blank">
+                        <span>2. The food _____ by the chef.</span>
+                        <input type="text" class="blank-input" data-answer="is prepared" placeholder="?">
+                    </div>
+                    <button class="check-btn" onclick="checkIntermediateExercise()">Check Answers</button>
+                    <div id="intermediateResult"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ADVANCED LEVEL -->
+        <section id="advanced" class="level-section">
+            <h2 class="level-title">🌳 Advanced Level</h2>
+            <p class="level-description">Master complex English structures, advanced vocabulary, idioms, and sophisticated communication skills.</p>
+            
+            <div class="progress-container">
+                <div class="progress-bar" id="advancedProgress">0%</div>
+            </div>
+
+            <div class="lesson-tabs">
+                <button class="lesson-tab active" onclick="showLesson('advanced', 'idioms', event)">Idioms</button>
+                <button class="lesson-tab" onclick="showLesson('advanced', 'vocab', event)">Advanced Vocab</button>
+                <button class="lesson-tab" onclick="showLesson('advanced', 'grammar', event)">Complex Grammar</button>
+            </div>
+
+            <!-- Advanced Idioms -->
+            <div id="advanced-idioms" class="lesson-content active">
+                <div class="content-card">
+                    <h3>🔥 Common English Idioms</h3>
+                    <p>Idioms add color and depth to your English. Learn these expressions used by native speakers:</p>
+                </div>
+
+                <div class="vocab-list mt-20">
+                    <div class="vocab-item">
+                        <span class="vocab-word">Break the ice</span>
+                        <span class="vocab-meaning">To make people feel comfortable in a situation</span>
+                    </div>
+                    <div class="vocab-item">
+                        <span class="vocab-word">Bite the bullet</span>
+                        <span class="vocab-meaning">To face a difficult situation with courage</span>
+                    </div>
+                    <div class="vocab-item">
+                        <span class="vocab-word">Cost an arm and a leg</span>
+                        <span class="vocab-meaning">To be very expensive</span>
+                    </div>
+                    <div class="vocab-item">
+                        <span class="vocab-word">Hit the nail on the head</span>
+                        <span class="vocab-meaning">To be exactly right about something</span>
+                    </div>
+                    <div class="vocab-item">
+                        <span class="vocab-word">Kill two birds with one stone</span>
+                        <span class="vocab-meaning">To achieve two goals with one action</span>
+                    </div>
+                    <div class="vocab-item">
+                        <span class="vocab-word">Let the cat out of the bag</span>
+                        <span class="vocab-meaning">To reveal a secret</span>
+                    </div>
+                    <div class="vocab-item">
+                        <span class="vocab-word">Once in a blue moon</span>
+                        <span class="vocab-meaning">Very rarely</span>
+                    </div>
+                    <div class="vocab-item">
+                        <span class="vocab-word">Piece of cake</span>
+                        <span class="vocab-meaning">Something very easy to do</span>
+                    </div>
+                    <div class="vocab-item">
+                        <span class="vocab-word">Under the weather</span>
+                        <span class="vocab-meaning">Feeling sick or unwell</span>
+                    </div>
+                    <div class="vocab-item">
+                        <span class="vocab-word">Beat around the bush</span>
+                        <span class="vocab-meaning">To avoid talking about what matters</span>
+                    </div>
+                </div>
+
+                <div class="content-card highlight">
+                    <h3>📝 Using Idioms in Sentences</h3>
+                    <ul>
+                        <li>Don't worry about the interview - it'll be <strong>a piece of cake</strong>!</li>
+                        <li>I wanted to <strong>kill two birds with one stone</strong> by going to the market while visiting my friend.</li>
+                        <li>She <strong>hit the nail on the head</strong> when she said the project needed more funding.</li>
+                        <li>I've been feeling <strong>under the weather</strong> since last week.</li>
+                        <li>Stop <strong>beating around the bush</strong> and tell me what happened!</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Advanced Vocabulary -->
+            <div id="advanced-vocab" class="lesson-content">
+                <div class="vocab-list">
+                    <h3>🎓 Academic & Professional Vocabulary</h3>
+                    <div class="vocab-item">
+                        <span class="vocab-word">Paradigm</span>
+                        <span class="vocab-meaning">A typical example or pattern of something</span>
+                    </div>
+                    <div class="vocab-item">
+                        <span class="vocab-word">Comprehensive</span>
+                        <span class="vocab-meaning">Complete; including all elements</span>
+                    </div>
+                    <div class="vocab-item">
+                        <span class="vocab-word">Disseminate</span>
+                        <span class="vocab-meaning">To spread widely</span>
+                    </div>
+                    <div class="vocab-item">
+                        <span class="vocab-word">Meticulous</span>
+                        <span class="vocab-meaning">Very careful and precise</span>
+                    </div>
+                    <div class="vocab-item">
+                        <span class="vocab-word">Pragmatic</span>
+                        <span class="vocab-meaning">Dealing with things sensibly and realistically</span>
+                    </div>
+                    <div class="vocab-item">
+                        <span class="vocab-word">Eloquent</span>
+                        <span class="vocab-meaning">Fluent or persuasive in speaking or writing</span>
+                    </div>
+                </div>
+
+                <div class="vocab-list mt-20">
+                    <h3>💬 Advanced Linking Words</h3>
+                    <div class="vocab-item">
+                        <span class="vocab-word">Furthermore</span>
+                        <span class="vocab-meaning">In addition; besides</span>
+                    </div>
+                    <div class="vocab-item">
+                        <span class="vocab-word">Nevertheless</span>
+                        <span class="vocab-meaning">In spite of that; however</span>
+                    </div>
+                    <div class="vocab-item">
+                        <span class="vocab-word">Consequently</span>
+                        <span class="vocab-meaning">As a result; therefore</span>
+                    </div>
+                    <div class="vocab-item">
+                        <span class="vocab-word">Although</span>
+                        <span class="vocab-meaning">In spite of the fact that</span>
+                    </div>
+                    <div class="vocab-item">
+                        <span class="vocab-word">Furthermore</span>
+                        <span class="vocab-meaning">In addition; moreover</span>
+                    </div>
+                    <div class="vocab-item">
+                        <span class="vocab-word">Subsequently</span>
+                        <span class="vocab-meaning">After a particular event; later</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Advanced Grammar -->
+            <div id="advanced-grammar" class="lesson-content">
+                <div class="grammar-rule">
+                    <h4>📖 Reported Speech (Indirect Speech)</h4>
+                    <p><strong>Key Rules:</strong> When reporting speech, move tense back (backshift)</p>
+                    <ul>
+                        <li>Direct: "I am happy." → Reported: <strong>He said he was happy.</strong></li>
+                        <li>Direct: "I will come tomorrow." → Reported: <strong>He said he would come the next day.</strong></li>
+                        <li>Direct: "I have finished." → Reported: <strong>She said she had finished.</strong></li>
+                        <li>Direct: "I saw him yesterday." → Reported: <strong>They said they saw him the day before.</strong></li>
+                        <li>Direct: "I am studying English." → Reported: <strong>He said he was studying English.</strong></li>
+                    </ul>
+                </div>
+
+                <div class="grammar-rule">
+                    <h4>📖 Inversions (Advanced Sentence Structure)</h4>
+                    <p>Use inversions to make your English more sophisticated:</p>
+                    <ul>
+                        <li>Never have I <strong>seen</strong> such a beautiful sunset.</li>
+                        <li>Rarely does he <strong>complain</strong> about anything.</li>
+                        <li>Seldom do we <strong>go</strong> to the cinema.</li>
+                        <li>Only after the meeting <strong>did</strong> I understand the situation.</li>
+                        <li>Not only is she talented, <strong>but</strong> she is also kind.</li>
+                        <li>Had I known, I <strong>would have</strong> helped you. (conditional inversion)</li>
+                    </ul>
+                </div>
+
+                <div class="grammar-rule">
+                    <h4>📖 Cleft Sentences</h4>
+                    <p>Emphasize information using cleft sentences:</p>
+                    <ul>
+                        <li><strong>It was John</strong> who broke the window. (emphasizing subject)</li>
+                        <li><strong>What I need</strong> is a good night's sleep. (emphasizing subject)</li>
+                        <li><strong>The reason</strong> I called was to invite you. (giving reason)</li>
+                        <li><strong>All I want</strong> is peace and quiet. (emphasizing desire)</li>
+                    </ul>
+                </div>
+
+                <div class="practice-area">
+                    <h4>✏️ Practice: Transform to Reported Speech</h4>
+                    <div class="fill-blank">
+                        <span>1. "I am coming tomorrow." → She said _____.</span>
+                        <input type="text" class="blank-input" data-answer="she was coming the next day" placeholder="?">
+                    </div>
+                    <div class="fill-blank">
+                        <span>2. "I have finished the work." → He said _____.</span>
+                        <input type="text" class="blank-input" data-answer="he had finished the work" placeholder="?">
+                    </div>
+                    <button class="check-btn" onclick="checkAdvancedExercise()">Check Answers</button>
+                    <div id="advancedResult"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- QUIZ SECTION -->
+        <section id="quiz" class="level-section">
+            <h2 class="level-title">📝 English Master Quiz</h2>
+            <p class="level-description">Test your knowledge across all levels! Complete the quizzes to track your progress.</p>
+
+            <div class="quiz-container">
+                <h3>Beginner Level Quiz</h3>
+                
+                <div class="question">
+                    <p>1. Choose the correct article: "_____ honest man"</p>
+                    <div class="options">
+                        <label><input type="radio" name="q1" value="a"> a</label>
+                        <label><input type="radio" name="q1" value="an" data-correct="true"> an</label>
+                        <label><input type="radio" name="q1" value="the"> the</label>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p>2. Complete: "These are my books. Those are _____."</p>
+                    <div class="options">
+                        <label><input type="radio" name="q2" value="this" data-correct="true"> this</label>
+                        <label><input type="radio" name="q2" value="that"> that</label>
+                        <label><input type="radio" name="q2" value="those"> those</label>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p>3. Choose the correct verb: "She _____ a doctor."</p>
+                    <div class="options">
+                        <label><input type="radio" name="q3" value="is" data-correct="true"> is</label>
+                        <label><input type="radio" name="q3" value="are"> are</label>
+                        <label><input type="radio" name="q3" value="am"> am</label>
+                    </div>
+                </div>
+
+                <button class="check-btn" onclick="checkQuiz()">Submit Quiz</button>
+                <div id="quizResult"></div>
+            </div>
+
+            <div class="quiz-container intermediate mt-30">
+                <h3>Intermediate Level Quiz</h3>
+                
+                <div class="question">
+                    <p>4. Choose the correct conditional: "If it _____ tomorrow, I will stay home."</p>
+                    <div class="options">
+                        <label><input type="radio" name="q4" value="rains" data-correct="true"> rains</label>
+                        <label><input type="radio" name="q4" value="rained"> rained</label>
+                        <label><input type="radio" name="q4" value="rain"> rain</label>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p>5. Change to passive: "The chef prepares the food."</p>
+                    <div class="options">
+                        <label><input type="radio" name="q5" value="wrong"> The food is preparing by the chef.</label>
+                        <label><input type="radio" name="q5" value="correct" data-correct="true"> The food is prepared by the chef.</label>
+                        <label><input type="radio" name="q5" value="wrong2"> The food was prepared by the chef.</label>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p>6. Choose the correct modal: "He _____ be at home. I saw him there."</p>
+                    <div class="options">
+                        <label><input type="radio" name="q6" value="might"> might</label>
+                        <label><input type="radio" name="q6" value="can't"> can't</label>
+                        <label><input type="radio" name="q6" value="must" data-correct="true"> must</label>
+                    </div>
+                </div>
+
+                <button class="check-btn" onclick="checkQuiz2()">Submit Quiz</button>
+                <div id="quizResult2"></div>
+            </div>
+
+            <div class="quiz-container advanced mt-30">
+                <h3>Advanced Level Quiz</h3>
+                
+                <div class="question">
+                    <p>7. Choose the correct idiom: "Don't worry, it's _____!"</p>
+                    <div class="options">
+                        <label><input type="radio" name="q7" value="piece of cake" data-correct="true"> piece of cake</label>
+                        <label><input type="radio" name="q7" value="break the ice"> break the ice</label>
+                        <label><input type="radio" name="q7" value="under the weather"> under the weather</label>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p>8. Choose the correct inversion: "_____ I seen such a beautiful thing."</p>
+                    <div class="options">
+                        <label><input type="radio" name="q8" value="Never have"> Never have</label>
+                        <label><input type="radio" name="q8" value="Have never"> Have never</label>
+                        <label><input type="radio" name="q8" value="Never" data-correct="true"> Never</label>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p>9. Reported speech: "'I'm coming tomorrow,' she said."</p>
+                    <div class="options">
+                        <label><input type="radio" name="q9" value="wrong"> She said she is coming tomorrow.</label>
+                        <label><input type="radio" name="q9" value="correct" data-correct="true"> She said she was coming the next day.</label>
+                        <label><input type="radio" name="q9" value="wrong2"> She said she comes tomorrow.</label>
+                    </div>
+                </div>
+
+                <button class="check-btn" onclick="checkQuiz3()">Submit Quiz</button>
+                <div id="quizResult3"></div>
+            </div>
+        </section>
+    </div>
+
+    <!---- form section -->
+
+    <form id="contactForm" method="post" action="https://formspree.io/f/xaqldkvv" class="contact-form" novalidate>
+        <h2>📬 Contact Us</h2>
+        <p>Have questions or feedback? We'd love to hear from you!</p>
+        <input type="text" id="name" placeholder="Your Name" required>
+        <input type="email" id="email" placeholder="Your Email" required>
+        <textarea id="message" placeholder="Your Message" rows="5" required></textarea>
+        <button type="submit">Send Message</button>
+        <div id="formResult"></div>
+    </form>
+
+    <!-- Group Section -->
+
+    <div class="group">
+        <h1>Group 15 project</h1>
+        <h2>👥 Join Our English Learning Community</h2>
+        <p>Connect with fellow learners, share tips, and practice together!</p>
+        <a href="https://chat.whatsapp.com/EEY5XjV0awV8fBzKHgHoL6?mode=gi_t" target="_blank" rel="noopener noreferrer" class="community-link">Join our WhatsApp Group</a>
+    </div>
+
+    <!-- Team Members Section -->
+
+    <div class="members-section">
+        <div class="member-list">
+        <h2>👨‍🎓 Meet the Team Members and their Educational Departments</h2>
+        <ol>
+            <li><strong>Okunlola Idris Olanrewaju</strong> - Computer Sciencese</li>
+            <li><strong>Azeez Hassan Olaitan</strong> - Computer Science</li>
+            <li><strong>Adejare Tajudeen Abiodun</strong> - Computer Science</li>
+            <li><strong>Igboaku Chukwunonso Gideon</strong> - Computer Science</li>
+            <li><strong>Adebayo Boluwatife</strong> - Computer Science</li>
+            <li><strong>Akinrinade Joshua Feranmi</strong> - Computer Science</li>
+            <li><strong>Oniyirokun Eniola Praise</strong> - Computer Science</li>
+            <li><strong>Nneli Destiny Jael</strong> - Computer Science</li>
+            <li><strong>Timcwat Mallam</strong> - Computer Science</li>
+            <li><strong>Abdulrahaman Jamiu Onimisi</strong> - Computer Science</li>
+        </ol>
+        </div>
+    </div>
+
+    <!------- section for lagos state university video and social media -------->
+    <div class="lasu-section">
+        <h2>🎓 Lagos State University (LASU)</h2>
+        <p>Lagos State University is a prestigious institution in Nigeria, known for its commitment to academic excellence and innovation. Our team of students from LASU has come together to create this English learning app to help learners around the world.</p>
+        <div class="video-container">
+            <img src="https://i.pinimg.com/originals/86/9b/52/869b52b68cb713faed7223a5996361d9.jpg" width="560" height="315" alt="lasu student">
+        </div>
+
+        <div class="play">
+            <p>LASU has always be the greatest University since 1983!</p>
+        </div>
+        
+        <div class="social-media">
+            <h2>📱 Follow Lagos State University on Social Media</h2>
+            <p>Stay updated with the latest news and events from LASU:</p>
+            <ul>
+                <li><a href="https://www.facebook.com/LagosStateUniversityInfo" target="_blank" rel="noopener noreferrer">Facebook</a></li>
+                <li><a href="https://x.com/LASUOfficial" target="_blank" rel="noopener noreferrer">Twitter</a></li>
+                <li><a href="https://www.instagram.com/lasuofficialpage" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+                <li><a href="https://www.linkedin.com/school/lagos-state-university/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+                <li><a href="https://t.me/lagosstateuniversity" target="_blank" rel="noopener noreferrer">Telegram</a></li>
+            </ul>
+
+        </div>
+
+    </div>
+        </div>
+
+
+    <!--- installation instructions -->
+    <div class="installation-section">
+        <h2>🚀 Installation Instructions</h2>
+        <p>To use and install this app on your device, follow these steps:</p>
+        <ol>
+            <li>You need to have a modern web browser installed on your device.</li>
+            <li>Ensure your device has an active internet connection for downloading and installing the app.</li>
+            <li>Open the app in your browser.</li>
+            <li>If the app is installable, the <strong>📥 Install App</strong> button will appear in the header section.</li>
+            <li>Click the button and follow the browser prompt to install the app.</li>
+        </ol>
+        <p><em>Note:</em> Don't forget to come back to check for updates!</p>
+        <h3>For Real Device Installation</h3>
+        <p>This app can be installed on real devices for offline use. It will appear as a regular application on your device, allowing you to use it without an internet connection.</p>
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>📚 English Master - Learn English from Beginner to Advanced</p>
+        <p>Created to help learners master English at all levels</p>
+
+        <div class="lasu">
+            <a href="https://www.lasu.edu.ng" target="_blank" rel="noopener noreferrer">Lagos State University</a>
+            <p>Made with ❤️ by LASU Students Project Team</p>
+            <p>© 2026 English Master. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="index.js"></script>
+
+</body>
+</html>
