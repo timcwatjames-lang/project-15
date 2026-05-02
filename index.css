@@ -815,24 +815,7 @@
         }
 
       /* ===== Ad Spaces ===== */
-     .ad-container {
-           background: #f8f9fa;
-           padding: 20px;
-           margin: 30px 5px;
-           border: 1px solid #ddd;
-           text-align: center;
-           border-radius: 8px;
-           height: 200px;
-      }
-
-   .ad-space {
-          min-height: 100px;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-     }
-
-
+     
         /* media queries for form validation */
         @media (max-width: 480px) {
             #contactForm {
